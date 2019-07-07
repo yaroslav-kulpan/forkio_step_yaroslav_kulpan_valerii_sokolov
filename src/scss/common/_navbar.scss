@@ -1,0 +1,181 @@
+@import "../mixins";
+@import "../variables";
+
+.container {
+  @include container_1200;
+}
+
+.navbar {
+  background-color: #27262a;
+  padding: 30px 0;
+
+  &__nav {
+    @include d-flex-center;
+    &__container {
+      @include d-flex-between;
+      flex-wrap: wrap;
+    }
+  }
+
+  .btn--navbar {
+    //position: absolute;
+  }
+
+  &__toggler {
+    display: none;
+    margin-top: 8px;
+
+    &__lines {
+      height: 3px;
+      width: 26px;
+      border-radius: 5px;
+      margin-bottom: 7px;
+      background-color: #ffffff;
+
+      &-top {
+        width: 20px;
+        position: relative;
+        right: -3px;
+      }
+    }
+  }
+}
+
+.nav__item {
+  margin-right: 4vw;
+}
+
+.nav__link {
+  font-size: 16px;
+  color: $main-color;
+  text-decoration: none;
+  font-weight: 600;
+
+  &:hover {
+    color: #ffffff;
+  }
+}
+
+.container-menu {
+  @include d-flex-between;
+  flex-wrap: wrap;
+}
+
+.logo {
+  @include d-flex-between ;
+  text-decoration: none;
+  width: 150px;
+
+  &__text {
+    @include font-Lato;
+    font-size: 24px;
+    text-transform: uppercase;
+    color: $main-color;
+    font-weight: 600;
+  }
+
+  &__img {
+    width: 43px;
+    height: 41px;
+    background: url("../img/navbar__logo.png") no-repeat center/cover;
+  }
+
+  &:hover &__text {
+    color: #ffffff;
+  }
+
+  &:hover &__img {
+    background: url("../img/navbar__logo-hover.png") no-repeat center/cover;;
+  }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 481px){
+  .navbar {
+    padding: 22px 0 55px 0;
+
+    &__nav {
+      order: 2;
+      flex: 0 0 100%;
+      position: absolute;
+      right: -30px;
+      top: 82px;
+      left: 0;
+    }
+  }
+  .nav__item {
+    margin-right: 7vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+
+  .container {
+    min-width: 300px;
+  }
+
+  .logo {
+    width: 43px;
+    height: 41px;
+
+    &__text {
+      display: none;
+    }
+  }
+
+  .navbar {
+    position: relative;
+    &__nav {
+      display: block;
+      position: absolute;
+      top: 102px;
+      right: 2px;
+      &-open {
+        display: none;
+      }
+      &__container {
+        width: 66vw;
+      }
+    }
+
+    &__toggler {
+      @include d-flex-center;
+      @include d-flex__column;
+    }
+
+  }
+
+  .nav__link {
+    display: inline-block;
+    padding-top: 28px;
+    padding-left: 36px;
+    color: #ffffff;
+    font-size: 27px;
+    font-weight: 300;
+    border-bottom: 1px solid #3b3b3b;
+    width: 254px;
+    height: 55px;
+    background-color: #333333;
+  }
+
+  .nav__item:hover .nav__link{
+    color: $main-color;
+  }
+
+  .nav__item {
+    position: relative;
+  }
+
+  .nav__item:hover::before {
+    content: '';
+    display: block;
+    top: 14px;
+    position: absolute;
+    height: 54px;
+    width: 8px;
+    background-color: $main-color;
+  }
+}
+
+
+
+

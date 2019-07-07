@@ -1,0 +1,30 @@
+@import "../mixins";
+@import "../variables";
+
+.btn {
+  @include button;
+}
+
+.btn--navbar {
+  @include button__buy-now;
+
+  &:hover {
+    background: #ffffff;
+    border: 1px solid $main-color;
+    color: $main-color;
+  }
+}
+
+.btn--download {
+  position: relative;
+  bottom: 36px;
+  @include button__big;
+  background: $main-color;
+  border: 1px solid $main-color;
+
+  &:hover {
+    background: #ffffff;
+    border: 1px solid $main-color;
+    color: $main-color;
+  }
+}

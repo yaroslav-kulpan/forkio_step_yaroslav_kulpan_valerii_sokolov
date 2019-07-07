@@ -1,0 +1,130 @@
+@import "../mixins";
+@import "../variables";
+
+.container {
+  @include container_1200;
+}
+
+.about-us {
+  padding-bottom: 70px;
+  background: #ffffff;
+}
+
+.about-us__content {
+  max-width: 913px;
+  margin: 0 auto;
+  @include d-flex-center;
+  @include d-flex__column;
+}
+
+.btn__download--description {
+  margin-top: -20px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #848e97;
+}
+
+.about-us__title {
+  margin-top: 59px;
+  font-size: 54px;
+  font-weight: 700;
+  color: #635c73;
+  text-transform: uppercase;
+}
+
+.about-us__description {
+  margin-top: 26px;
+  @include font-Lato;
+  font-size: 21px;
+  font-weight: 400;
+  color: #323232;
+  text-align: center;
+  line-height: 32px;
+  opacity: .8;
+}
+
+.counters {
+  margin-top: 32px;
+  @include d-flex-center;
+  flex-wrap: wrap;
+}
+
+.counter__item {
+  margin-right: 10px;
+  display: inline-block;
+  text-decoration: none;
+
+  &__name {
+    padding: 5px 10px;
+    background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
+    border: 1px solid rgba(27, 31, 35, .2);
+    border-radius: .25em 0 0 .25em;
+    font-size: 12px;
+    font-weight: 700;
+    color: #24292e;
+
+    &:hover {
+      background-color: #e6ebf1;
+      background-image: linear-gradient(-180deg, #f0f3f6, #e6ebf1 90%);
+      background-position: -.5em;
+      border-color: rgba(27, 31, 35, .35);
+    }
+  }
+
+  &__quantity {
+    padding: 5px 8px;
+    background-color: #fff;
+    border: 1px solid rgba(27, 31, 35, .2);
+    border-bottom-right-radius: 3px;
+    border-left: 0;
+    border-top-right-radius: 3px;
+    color: #24292e;
+    font-size: 12px;
+    font-weight: 600;
+
+    &:hover {
+      color: #0366d6;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) and (min-width: 481px) {
+  .about-us {
+    &__content {
+      max-width: 669px;
+    }
+
+    &__title {
+      font-size: 42px;
+    }
+  }
+}
+
+@media only screen and (max-width: 480px) {
+
+  .about-us__title {
+    font-size: 26px;
+    text-align: center;
+    line-height: 42px;
+  }
+  .about-us__description {
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  .btn--download {
+    padding: 12px 37px;
+    font-size: 18px;
+    bottom: 26px;
+  }
+  .btn__download--description {
+    margin-top: -12px;
+  }
+  .counters {
+    margin-top: 36px;
+  }
+  .counter__item:nth-child(3) {
+    margin-top: 29px;
+  }
+}

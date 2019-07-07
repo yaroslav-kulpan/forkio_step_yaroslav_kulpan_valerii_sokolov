@@ -1,0 +1,67 @@
+@mixin d-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin d-flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin d-flex__column {
+  flex-direction: column;
+}
+
+@mixin flex__wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@mixin container_1200 {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+@mixin button {
+  display: inline-block;
+  border-radius: 44px;
+  color: #fff;
+  text-decoration: none;
+  transition: .6s;
+}
+
+@mixin button__buy-now {
+  padding: 12px 35px;
+  background: #8d81ac;
+  border: 1px solid #8d81ac;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+@mixin button__big {
+  padding: 23px 63px;
+  font-size: 21px;
+}
+
+@mixin button__purchase {
+  padding: 16px 38px;
+  background: #645561;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+@mixin font-Lato {
+  font-family: Lato, sans-serif;
+}
+
+//@mixin section__title {
+//  font-size: 48px;
+//  font-weight: 700;
+//  color: #ffffff;
+//  text-align: center;
+//}
+

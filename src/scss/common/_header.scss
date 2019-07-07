@@ -1,0 +1,68 @@
+.header {
+  background: url("../img/section/__header__bg.png") no-repeat center / cover;
+  padding-top: 60px;
+  padding-bottom: 487px;
+}
+
+.header__slogan {
+  @include d-flex-center;
+  flex-direction: column;
+}
+
+.slogan__title {
+  text-align: center;
+  font-size: 82px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.slogan__sub-title {
+  @include font-Lato;
+  color: $main-color;
+  padding: 18px 0;
+  text-align: center;
+  font-size: 30px;
+}
+
+.slogan__version {
+  color: #848e97;
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+@media only screen and (max-width: 992px) and (min-width: 481px) {
+  .slogan__title {
+    font-size: 72px;
+  }
+
+  .slogan__sub-title {
+    font-size: 24px;
+  }
+
+  .slogan__version {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .header {
+   padding-top: 43px;
+    padding-bottom: 424px;
+  }
+
+  .slogan__title {
+    font-size: 52px;
+  }
+
+  .slogan__sub-title {
+    min-width: 280px;
+    width: 80vw;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .slogan__version {
+    font-size: 14px;
+  }
+}
