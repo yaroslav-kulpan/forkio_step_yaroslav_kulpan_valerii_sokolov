@@ -6,6 +6,11 @@
   padding-top: 98px;
   padding-bottom: 30px;
 
+  .responsive-bg {
+    background: url('../img/section/pricing-plan-bg.png') no-repeat center/cover;
+    overflow-x: hidden;
+  }
+
   &__row {
     justify-content: space-between;
   }
@@ -61,11 +66,17 @@
   font-weight: 700;
 }
 
+.responsive-bg {
+  background: url('../img/section/pricing-plan-bg.png') no-repeat center/cover;
+  overflow: hidden;
+}
+
 @media only screen and (max-width: 992px) and (min-width: 481px) {
   .feedback {
     &__column {
-    flex: 0 0 45%;
+      flex: 0 0 45%;
     }
+
     &__footer::after {
       left: 0;
       width: 100%;
@@ -85,7 +96,8 @@
 
   .feedback {
     background: none;
-    &::after{
+
+    &::after {
       content: '';
       display: block;
       position: relative;
@@ -95,13 +107,16 @@
       left: 5%;
       background-color: #8c7b8f;
     }
+
     &__row {
       justify-content: center;
     }
+
     &__column {
       flex: 0 0 85%;
       margin-top: 40px;
     }
+
     &__footer {
       display: none;
     }
