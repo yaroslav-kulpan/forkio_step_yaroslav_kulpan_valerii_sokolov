@@ -1,10 +1,6 @@
 @import "../mixins";
 @import "../variables";
 
-.container {
-  @include container_1200;
-}
-
 .about-us {
   padding-bottom: 70px;
   background: #ffffff;
@@ -28,6 +24,7 @@
   margin-top: 59px;
   font-size: 54px;
   font-weight: 700;
+  text-align: center;
   color: #635c73;
   text-transform: uppercase;
 }
@@ -127,7 +124,7 @@
 
 }
 
-@media only screen and (max-width: 403px) {
+@media only screen and (max-width: 403px){
   .counter__item:nth-child(3) {
     margin-top: 29px;
   }

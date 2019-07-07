@@ -11,14 +11,11 @@
 
   &__nav {
     @include d-flex-center;
+
     &__container {
       @include d-flex-between;
       flex-wrap: wrap;
     }
-  }
-
-  .btn--navbar {
-    //position: absolute;
   }
 
   &__toggler {
@@ -89,13 +86,11 @@
   }
 }
 
-@media only screen and (max-width: 992px) and (min-width: 481px){
+@media only screen and (max-width: 992px) and (min-width: 481px) {
   .navbar {
     padding: 22px 0 55px 0;
 
     &__nav {
-      order: 2;
-      flex: 0 0 100%;
       position: absolute;
       right: -30px;
       top: 82px;
@@ -124,14 +119,17 @@
 
   .navbar {
     position: relative;
+
     &__nav {
       display: block;
       position: absolute;
       top: 102px;
       right: 2px;
+
       &-open {
         display: none;
       }
+
       &__container {
         width: 66vw;
       }
@@ -157,7 +155,7 @@
     background-color: #333333;
   }
 
-  .nav__item:hover .nav__link{
+  .nav__item:hover .nav__link {
     color: $main-color;
   }
 
