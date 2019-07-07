@@ -124,6 +124,10 @@
   .counters {
     margin-top: 36px;
   }
+
+}
+
+@media only screen and (max-width: 403px) {
   .counter__item:nth-child(3) {
     margin-top: 29px;
   }

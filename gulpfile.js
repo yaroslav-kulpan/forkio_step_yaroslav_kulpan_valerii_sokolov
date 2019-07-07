@@ -8,9 +8,7 @@ const rename = require("gulp-rename");						//rename files after minify
 const concat = require('gulp-concat');						//concat for js
 const terser = require('gulp-terser');						//minify for js
 const autoprefixer = require('gulp-autoprefixer');			//cross-browser compatibility css
-const babel = require('gulp-babel');						//cross-browser compatibility js
-const nunjucks = require('gulp-nunjucks-render');           //template engine
-// const imagemin = require('gulp-imagemin');
+const imagemin = require('gulp-imagemin');
 
 const fontsFiles = [										//составляем массив переменних с все файлов шрифтов, для переноса в папку разработки
     './src/fonts/**.eot',
@@ -31,7 +29,7 @@ function cleandev() {										//модуль отчистки папки пер
 
 function img() {											//модуль переноса картинок
     return gulp.src(imgFiles)
-    // .pipe(imagemin())
+        .pipe(imagemin())
         .pipe(gulp.dest('./dist/img'))
 }
 
@@ -40,21 +38,12 @@ function fonts() {											//Copy fonts to dir "dev"
         .pipe(gulp.dest('./dist/fonts'))
 }
 
-
-function js() {											//Copy fonts to dir "dev"
-    return gulp.src('./src/js/*.js')
-        .pipe(gulp.dest('./dist/js'))
-}
-
 function scripts() {
-    return gulp.src('src/sections/**/*.js')
-        .pipe(babel({											//babel
-            presets: ['@babel/env']
-        }))
+    return gulp.src('src/js/*.js')
         .pipe(terser({											//terser
             toplevel: true
         }))														//minify js
-        .pipe(concat('all.js'))									//concat all js files
+        .pipe(concat('main.js'))									//concat all js files
         .pipe(rename(function (path) {							// function of rename extname for .css
             path.extname = ".min.js";
         }))
@@ -66,6 +55,7 @@ function forSass() {
     return gulp.src('./src/scss/*.scss')
         .pipe(sourcemaps.init())
         .pipe(sass())
+        .on('error', console.error.bind(console))
         .pipe(cleanCSS({level: 2}))								// minifyCSS
         .pipe(autoprefixer({
             overrideBrowserslist: ['last 2 versions'],							// для браузеров которые использует 0.1%
@@ -96,6 +86,5 @@ gulp.task('scripts', scripts);
 gulp.task('sass', forSass);
 gulp.task('watch', watch);
 gulp.task('fonts', fonts);
-gulp.task('js', js);
-gulp.task('build', gulp.series('cleandev', gulp.series(img, fonts, js, scripts, forSass)));
+gulp.task('build', gulp.series('cleandev', gulp.series(img, fonts, scripts, forSass)));
 gulp.task('dev', gulp.series('build', watch));

@@ -3,7 +3,7 @@
 .pricing-plan {
   padding-top: 73px;
   padding-bottom: 97px;
-  background: url('../img/section/__pricing-plan-bg.png') no-repeat center/cover;
+  background: url('/dist/img/section/__pricing-plan-bg.png') no-repeat center/cover;
 }
 
 .pricing__row {
@@ -173,6 +173,10 @@
 }
 
 @media only screen and (max-width: 480px) {
+  .pricing-plan {
+    background: none;
+  }
+
   .section-title--pricing-plan {
     font-size: 28px;
     margin-bottom: 20px;
