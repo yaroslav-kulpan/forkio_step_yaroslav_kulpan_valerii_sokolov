@@ -2,7 +2,7 @@
 @import "../variables";
 
 .feedback {
-  background: url("dist/img/section/__feedback-bg.png") no-repeat center / cover;
+  background: url("../img/section/__feedback-bg.png") no-repeat center / cover;
   padding-top: 98px;
   padding-bottom: 30px;
 
@@ -79,7 +79,7 @@
 
 @media only screen and (max-width: 480px) {
   .responsive-bg {
-    background: url("../../img/section/__media320_last-section.png") no-repeat center/cover;
+    background: url("../img/section/media320_last-section.png") no-repeat center/cover;
   }
 
 .pricing-plan {
